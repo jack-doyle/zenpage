@@ -215,6 +215,24 @@ a:focus {
     transform: translate(-50%, -50%, 0);
 }
 
+.bookmarks-info .title,
+.bookmarks-info .subtitle {
+    text-align: center;
+}
+
+.bookmarks-info .title {
+    font-size: 1.8rem;
+}
+
+.bookmarks-info .subtitle {
+    margin-top: 2rem;
+}
+
+.bookmarks-info a {
+    border-bottom: 1px solid #eee;
+}
+
+
 .category {
     min-width: 10rem;
 }
@@ -287,10 +305,6 @@ a:focus {
 
 .error.error--category-name {
     margin-left: 1rem;
-}
-
-.bookmark-options {
-
 }
 
 .bookmark-options ul {

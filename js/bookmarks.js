@@ -6,9 +6,23 @@ function loadBookmarks() {
     chrome.storage.sync.get({
         bookmarks: []
     }, function(items) {
+        console.log(items);
         if (items.bookmarks.length === 0) {
-            var heading = document.createElement('h1');
-            bookmarks.appendChild(heading);
+            var bookmarksInfo = document.createElement('div');
+            bookmarksInfo.classList.add('bookmarks-info');
+            
+            var title = document.createElement('span');
+            title.textContent = 'No bookmarks yet.';
+            title.classList.add('title');
+
+            var subtitle = document.createElement('p');
+            subtitle.innerHTML = 'Add bookmarks on the <a href="options.html">options page</a>.';
+            subtitle.classList.add('subtitle');
+
+            bookmarksInfo.appendChild(title);
+            bookmarksInfo.appendChild(subtitle);
+
+            bookmarks.appendChild(bookmarksInfo);
         } else {
             items.bookmarks.forEach(function(bookmark) {
                 var newCategory = document.createElement('div');
