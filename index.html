@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="bookmarks">
+        <div class="hint top left">
+            <span>Esc</span>&nbsp;&nbsp;&nbsp;<span>Close</span>
+        </div>
+
+        <div class="bookmarks-background"></div>
+        <div class="bookmarks-wrap"></div>
+    </div>
+    <div class="container center">
+        <h1 class="time"></h1>
+        <h2 class="date"></h2>
+        <form name="search" class="search" method="post" action="php/search.php">
+            <input type="text" class="search__input" name="query" placeholder="Google" autofocus>
+        </form>
+        <div class="break"></div>
+        <div class="quick-links flex"></div>
+    </div>
+    <div class="hint right">
+        <span>Ctrl + c</span>&nbsp;&nbsp;&nbsp;<span>New image</span>
+    </div>
+
+    <div class="hint bottom">
+        <span>Ctrl + b</span>&nbsp;&nbsp;&nbsp;<span>Bookmarks</span>
+    </div>
+    <a href="options.html" class="bottom left">Options</a>
+    <div class="credit"></div>
+    <script src="js/sanitizer.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/images.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/bookmarks.js"></script>
+    <script src="js/site-info.js"></script>
+    <script src="js/quick-links.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
