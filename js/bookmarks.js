@@ -6,7 +6,6 @@ function loadBookmarks() {
     chrome.storage.sync.get({
         bookmarks: []
     }, function(items) {
-        console.log(items);
         if (items.bookmarks.length === 0) {
             var bookmarksInfo = document.createElement('div');
             bookmarksInfo.classList.add('bookmarks-info');
