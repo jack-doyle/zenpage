@@ -38,7 +38,7 @@ function getImages(url, callback) {
             callback(xhr.responseText);
     }
     xhr.open("GET", url, true); // true for asynchronous
-    xhr.setRequestHeader('Authorization', 'Client-ID ' + APP_ID);
+    xhr.setRequestHeader('Authorization', 'Client-ID ' + config.unsplashId);
     xhr.send(null);
 }
 
