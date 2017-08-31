@@ -14,5 +14,10 @@
 		"16": "./icons/icon-16.png",
 		"48": "./icons/icon-48.png",
 		"128": "./icons/icon-128.png"
+	},
+	"applications": {
+		"gecko": {
+			"id": "{0aecd3ce-28bf-4b16-970f-50ad2cdbd706}"
+		}
 	}
 }
