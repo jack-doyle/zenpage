@@ -94,16 +94,23 @@ a:focus {
     display: initial;
 }
 
+.weather__heading,
+.weather__subheading {
+    display: flex;
+    align-items: center;
+}
+
 .weather__temperature {
     display: inline-block;
-    margin-bottom: 0.5rem;
-    font-size: 5rem;
+    align-self: flex-end;
+    font-size: 4rem;
     font-weight: 300;
 }
 
 .weather__condition {
     font-family: Weather;
     font-size: 6rem;
+    margin-left: 1rem;
 }
 
 .weather__condition-text {
@@ -112,7 +119,7 @@ a:focus {
 }
 
 .weather__unit {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .search,
