@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100, 300, 400,500,700');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
@@ -82,6 +80,39 @@ a:hover,
 a:focus {
     text-decoration: none;
     color: inherit;
+}
+
+.weather {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 2rem; 
+    text-align: center;
+}
+
+.weather.active {
+    display: initial;
+}
+
+.weather__temperature {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 5rem;
+    font-weight: 300;
+}
+
+.weather__condition {
+    font-family: Weather;
+    font-size: 6rem;
+}
+
+.weather__condition-text {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.weather__unit {
+    font-size: 3rem;
 }
 
 .search,
@@ -232,7 +263,6 @@ a:focus {
     border-bottom: 1px solid #eee;
 }
 
-
 .category {
     min-width: 10rem;
 }
@@ -271,7 +301,6 @@ a:focus {
     line-height: 1.5rem;
     padding: 0.5rem;
 }
-
 
 .category__links ul a:hover li {
     background-color: #444;
@@ -312,7 +341,7 @@ a:focus {
 }
 
 .bookmark-options input {
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 0.6rem;
 }
 
 .bookmark-option-category > ul > li > input:last-of-type {
@@ -331,6 +360,21 @@ a:focus {
 
 .bookmark-option-link:first-of-type {
     margin-top: 0.5rem;
+}
+
+.input-group {
+    margin: 2rem 0;
+}
+
+.input-group .input-information {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input[type="text"] {
+    padding: 0.4rem 0.6rem;
 }
 
 #save {

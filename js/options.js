@@ -1,4 +1,46 @@
 var sitesOptions = document.querySelectorAll('.site');
+var weatherLocationOption = document.querySelector('#weather-location');
+var weatherCelsiusOption = document.querySelector('#celsius');
+var weatherFahrenheitOption = document.querySelector('#fahrenheit');
+var weatherDisplayOption = document.querySelector('#display-weather');
+
+function saveWeatherOptions() {
+  var weatherUnits = 'c';
+
+  if (weatherFahrenheitOption.checked) {
+    weatherUnits = 'f';
+  }
+
+  var weatherOptions = {
+    show: weatherDisplayOption.checked,
+    units: weatherUnits,
+    location: weatherLocationOption.value
+  };
+
+  chrome.storage.sync.set({
+    weather: weatherOptions
+  });
+}
+
+function restoreWeatherOptions() {
+  chrome.storage.sync.get({
+    weather: {}
+  }, function(options) {
+    if (options.weather.show) {
+      weatherDisplayOption.checked = true;
+    }
+
+    if (options.weather.units === 'c') {
+      weatherCelsiusOption.checked = true;
+    } else if (options.weather.units === 'f') {
+      weatherFahrenheitOption.checked = true;
+    }
+
+    if (options.weather.location) {
+      weatherLocationOption.value = options.weather.location;
+    }
+  });
+}
 
 function saveBookmarks() {
     var bookmarks = [];
@@ -119,6 +161,7 @@ function saveQuickLinks() {
 function saveOptions() {
     saveBookmarks();
     saveQuickLinks();
+    saveWeatherOptions();
 }
 
 function notifySave() {
@@ -217,7 +260,8 @@ function restoreQuickLinks() {
 
 function restoreOptions() {
   restoreQuickLinks();
-  restoreBookmarks();    
+  restoreBookmarks();
+  restoreWeatherOptions();  
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);

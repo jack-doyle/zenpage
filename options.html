@@ -3,6 +3,7 @@
 
 <head>
     <title>Startpage options</title>
+    <link rel="stylesheet" href="css/awesomplete.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -230,13 +231,34 @@
             <div class="bookmark-options">
                 <ul></ul>
             </div>
+
+            <h2>Weather</h2>
+            <div class="input-group">
+                <label for="display-weather">Show the weather widget</label>
+                <input id="display-weather" name="display-weather" type="checkbox">
+            </div>
+            
+            <div class="input-group">
+                <label class="input-information" for="unit">Units</label>
+                <input type="radio" id="celsius" name="unit" value="celsius">
+                <label for="celsius">Celsius</label>
+
+                <input type="radio" id="fahrenheit" name="unit" value="fahrenheit">
+                <label for="fahrenheit">Fahrenheit</label>
+            </div>
+
+            <div class="input-group">
+                <label class="input-information" for="weather-location">Location</label>
+                <input type="text" id="weather-location" name="weather-location" placeholder="Start typing...">
+            </div>
+
         </div>
 
 
         <div id="status"></div>
         <button id="save">Save</button>
     </div>
-    
+    <script src="js/awesomplete.js"></script>
     <script src="js/options.js">
     </script>
     </div>
