@@ -6,7 +6,6 @@ View and install the extension [here](https://chrome.google.com/webstore/detail/
 
 ## Screenshots
 
-![Home-one](/screenshots/berries.png?raw=true)
-![Home-two](/screenshots/droplet.png?raw=true)
-![Home-three](/screenshots/forest.png?raw=true)
+![Home-one](/screenshots/valley.png?raw=true)
+![Home-two](/screenshots/strawberries.png?raw=true)
 ![Bookmarks](/screenshots/bmarks.png?raw=true)
