@@ -8,7 +8,8 @@
 	},
 	"options_page": "options.html",
 	"permissions": [
-		"storage"
+		"storage",
+		"geolocation"
 	],
 	"icons": {
 		"16": "./icons/icon-16.png",

@@ -268,6 +268,59 @@ function enableAutocomplete() {
   var autocomplete = new google.maps.places.Autocomplete(weatherLocationOption);
 }
 
+function getCurrentLocation() {
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      if (position) {
+        getFormattedLocation(position, setLocation);
+      } else {
+        alert('Error getting location. Please manually enter your location in the text box.');
+      }
+    }, function(error) {
+      alert('Error: ' + error.message);
+    });
+  } else {
+    alert('Your browser doesn\'t support geolocation. Please manually enter your location in the text box.');
+  }
+}
+
+function getFormattedLocation(position, callback) {
+  var request = new XMLHttpRequest();
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+
+  var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude + "&key=AIzaSyAm8PKuGMBtijZo_1uvv0vgaDZWbXyssoM";
+
+  request.onreadystatechange = function() {
+    if (request.readyState === XMLHttpRequest.DONE) {
+      if (request.status === 200) {
+
+        var response = JSON.parse(request.responseText);
+        var formattedLocation = response.results.filter(isCity)[0].formatted_address;
+
+          if (callback && typeof callback === "function") {
+            callback(formattedLocation);
+          }
+      } else {
+          alert('Error getting location information.');
+      }
+    }
+  }
+
+  request.open('GET', url);
+  request.send();
+}
+
+function setLocation(formattedLocation) {
+  weatherLocationOption.value = formattedLocation;
+}
+
+function isCity(address) {
+  return address.types.indexOf("locality") > -1;
+}
+
+document.querySelector('.geolocate').addEventListener('click', getCurrentLocation);
+
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('save').addEventListener('click',
     saveOptions);
