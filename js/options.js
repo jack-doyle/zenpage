@@ -269,7 +269,7 @@ function enableAutocomplete() {
 }
 
 function getCurrentLocation() {
-  if (supports.geolocation) {
+  if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(function(position) {
       if (position) {
         getFormattedLocation(position, setLocation);
