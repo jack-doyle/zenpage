@@ -3,6 +3,7 @@
     // Elements
     var weather = document.querySelector('.weather');
     var temperature = document.querySelector('.weather__temperature');
+    var unit = document.querySelector('.weather__unit');
     var condition = document.querySelector('.weather__condition');
     var conditionText = document.querySelector('.weather__condition-text');
     var location = document.querySelector('.weather__location');
@@ -14,7 +15,7 @@
 			// Weather API
 		    var PATH_WEATHER_BASE = 'https://query.yahooapis.com/v1/public/yql';
 		    var PATH_USER_LOCATION = options.weather.location;
-		    var PATH_USER_UNIT = options.weather.unit;
+		    var PATH_USER_UNIT = options.weather.units;
 		    var PATH_SQL_QUERY = 'q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + PATH_USER_LOCATION + '") and u="' + PATH_USER_UNIT + '"';
 		    var PATH_ARRAY_FORMAT = 'format=json&diagnostics=false&env=store://datatables.org/alltableswithkeys&callback=';
 
@@ -42,6 +43,7 @@
         data = data.query.results.channel;
 
         temperature.innerHTML = data.item.condition.temp + '&deg;';
+        unit.innerHTML = data.units.temperature;
         condition.classList.add('icon-' + data.item.condition.code);
         conditionText.innerHTML = data.item.condition.text;
         location.innerHTML = data.location.city + ', ' + data.location.country;
