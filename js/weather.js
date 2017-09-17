@@ -20,13 +20,12 @@
 
 		    var url = encodeURI(PATH_WEATHER_BASE + '?' + PATH_SQL_QUERY + '&' + PATH_ARRAY_FORMAT);
 
-		    weather.classList.add('active');
-
 		    // Query the API
 		    var request = new XMLHttpRequest();
 		    request.onreadystatechange = function() {
 		        if (request.readyState === XMLHttpRequest.DONE) {
 		            if (request.status === 200) {
+		            	weather.classList.add('active');
 		                updateWeather(JSON.parse(request.responseText));
 		            } else {
 		                alert('Error getting weather information.');
