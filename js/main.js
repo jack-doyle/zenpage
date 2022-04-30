@@ -39,6 +39,7 @@
 	hintRight.addEventListener('animationend', resetAnimation);	
 
 	setInterval(tick, 1000);
+	tick();
 
 	function openBookmarks() {
 		bookmarks.classList.add('open');
